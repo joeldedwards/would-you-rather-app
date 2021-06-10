@@ -29,6 +29,19 @@ code {
   align-items: center;
 }
 
+.SignIn {
+  justify-content: center;
+}
+
+.SplashScreen  {
+  justify-content: space-around;
+}
+
 .logo {
   max-width: 200px;
+}
+
+.SignIn .logo {
+  max-width: 100px;
+  margin: 2rem auto;
 }
