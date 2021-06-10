@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 // import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { handleInitialData } from '../actions/shared'
@@ -17,6 +17,7 @@ class App extends Component {
             <div>
                 <div className="splash-screen">
                     <img src={logo} alt="" className='logo' />
+                    <SignIn />
                     <Button variant="contained" className='btn' size='large' color='primary'>Sign In <ArrowRightAltIcon /></Button>
                 </div>
             </div>
@@ -24,4 +25,10 @@ class App extends Component {
     }
 }
 
-export default connect()(App)
+function mapStateToProps({authedUser}) {
+    return {
+      loading: authedUser === null
+    }
+  }
+
+export default connect(mapStateToProps)(App)
