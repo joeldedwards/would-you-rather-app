@@ -6,6 +6,7 @@ import { LoadingBar } from 'react-redux-loading'
 import SplashScreen from './SplashScreen'
 import SignIn from './SignIn'
 import Home from './Home'
+import NewQuestion from './NewQuestion'
 
 class App extends Component {
     componentDidMount() {
@@ -16,7 +17,7 @@ class App extends Component {
         return (
             <div>
                 <LoadingBar/>
-                <SignIn/>
+                <NewQuestion/>
             </div>
         )
     }
