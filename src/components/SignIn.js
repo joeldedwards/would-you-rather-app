@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import {setAuthedUser} from '../actions/authedUser'
 import logo from '../images/logo.png'
 import { Button } from '@material-ui/core'
 import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt'
@@ -18,6 +19,13 @@ class SignIn extends Component {
         this.setState(() => ({
             userAvatar
         }))
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault()
+
+        const {dispatch} = this.props
+        dispatch(setAuthedUser(this.state.userAvatar))
     }
 
     render() {
@@ -50,9 +58,8 @@ class SignIn extends Component {
     }
 }
 
-function mapStateToProps({users, authedUser}) {
+function mapStateToProps({users}) {
     return {
-        authedUser,
         users: Object.keys(users).map((user) => users[user])
     }
 }
