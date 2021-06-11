@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
-// import { BrowserRouter as Router, Route } from 'react-router-dom'
+import React, { Component, Fragment } from 'react'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { handleInitialData } from '../actions/shared'
 import { LoadingBar } from 'react-redux-loading'
-import SplashScreen from './SplashScreen'
+// import SplashScreen from './SplashScreen'
 import SignIn from './SignIn'
-import Home from './Home'
+// import Home from './Home'
 import NewQuestion from './NewQuestion'
 
 class App extends Component {
@@ -15,10 +15,21 @@ class App extends Component {
 
     render() {
         return (
-            <div>
+            <Router>
+                <Fragment>
                 <LoadingBar/>
-                <NewQuestion/>
-            </div>
+                <div className='container'>
+                    <Route path='/' exact component={SignIn} />
+                    {
+                    this.props.loading === true 
+                    ? null 
+                    : <div>
+                    <Route path='/new' component={NewQuestion} />
+                    </div>
+                    }
+                </div>
+                </Fragment>
+            </Router>
         )
     }
 }
