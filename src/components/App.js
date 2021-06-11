@@ -5,6 +5,7 @@ import { handleInitialData } from '../actions/shared'
 import { LoadingBar } from 'react-redux-loading'
 import SplashScreen from './SplashScreen'
 import SignIn from './SignIn'
+import Home from './Home'
 
 class App extends Component {
     componentDidMount() {
