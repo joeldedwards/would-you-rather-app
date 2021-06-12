@@ -1,14 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import {setAuthedUser} from '../actions/authedUser'
+import { Redirect } from 'react-router-dom'
 import logo from '../images/logo.png'
-import { Button } from '@material-ui/core'
-import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt'
 
 class SignIn extends Component {
 
     state = {
-        userAvatar: '../avatars/default.png'
+        userAvatar: '',
+        toNewQuestion: false
     }
 
     changeAuthedUser = (e) => {
@@ -23,13 +22,20 @@ class SignIn extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
+        
+        const {userAvatar} = this.state
 
-        const {dispatch} = this.props
-        dispatch(setAuthedUser(this.state.userAvatar))
+        this.setState(() => ({
+            toNewQuestion: userAvatar ? false : true
+        }))
     }
 
     render() {
-        const {userAvatar} = this.state
+        const {userAvatar, toNewQuestion} = this.state
+
+        if(toNewQuestion === true) {
+            return <Redirect to='/new' />
+        }
 
         return (
             <div>
@@ -38,7 +44,16 @@ class SignIn extends Component {
                         <img src={logo} alt='' className='logo' />
                         <section>
                             <h5>Sign In to continue</h5>
-                            <img src={userAvatar} className='img-fluid' alt="" />
+                            {
+                                this.props.users.filter(
+                                    user => user.id === userAvatar
+                                )
+                                .map(setUser => (
+                                    <div key={setUser.id}>
+                                        <img src={setUser.avatarURL} className='img-fluid' alt="" />
+                                    </div>
+                                ))
+                            }
                             <select onChange={this.changeAuthedUser} className='form-select form-select-lg mb-3'>
                             <option>Select Profile</option>
                             {
@@ -50,7 +65,10 @@ class SignIn extends Component {
                             }
                             </select>
                         </section>
-                        <Button variant='contained' className='btn' size='large' color='primary'>Sign In <ArrowRightAltIcon /></Button>
+                        
+                        <button
+                        type='submit'
+                        >Sign In</button>
                     </form>
                 </div>
             </div>
