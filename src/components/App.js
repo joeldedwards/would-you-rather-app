@@ -5,8 +5,7 @@ import { handleInitialData } from '../actions/shared'
 import { LoadingBar } from 'react-redux-loading'
 // import SplashScreen from './SplashScreen'
 import SignIn from './SignIn'
-// import Home from './Home'
-import NewQuestion from './NewQuestion'
+import Home from './Home'
 
 class App extends Component {
     componentDidMount() {
@@ -23,9 +22,7 @@ class App extends Component {
                     {
                     this.props.loading === true 
                     ? null 
-                    : <div>
-                    <Route path='/new' component={NewQuestion} />
-                    </div>
+                    : <div><Route path='/new' component={Home} /></div>
                     }
                 </div>
                 </Fragment>
