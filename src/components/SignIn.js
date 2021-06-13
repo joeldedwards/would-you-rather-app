@@ -1,37 +1,44 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { setAuthedUser } from '../actions/authedUser'
 import { Redirect } from 'react-router-dom'
 import logo from '../images/logo.png'
+import default1 from '../avatars/default.png'
+import IconButton from '@material-ui/core/IconButton'
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos'
 
 class SignIn extends Component {
 
     state = {
-        userAvatar: '',
+        setUser: '',
         toNewQuestion: false
     }
 
     changeAuthedUser = (e) => {
         e.preventDefault()
 
-        const userAvatar = e.target.value
+        const setUser = e.target.value
 
         this.setState(() => ({
-            userAvatar
+            setUser
         }))
     }
 
     handleSubmit = (e) => {
         e.preventDefault()
         
-        const {userAvatar} = this.state
+        const {setUser} = this.state
+        const {dispatch, id} = this.props
+
+        dispatch(setAuthedUser(setUser))
 
         this.setState(() => ({
-            toNewQuestion: userAvatar ? false : true
+            toNewQuestion: id ? false : true
         }))
     }
 
     render() {
-        const {userAvatar, toNewQuestion} = this.state
+        const {setUser, toNewQuestion} = this.state
 
         if(toNewQuestion === true) {
             return <Redirect to='/new' />
@@ -43,17 +50,19 @@ class SignIn extends Component {
                     <form onSubmit={this.handleSubmit}>
                         <img src={logo} alt='' className='logo' />
                         <section>
-                            <h5>Sign In to continue</h5>
-                            {
+                            <div className='signin__avatar'>
+                            <img 
+                            src={
                                 this.props.users.filter(
-                                    user => user.id === userAvatar
+                                    user => user.id === setUser
                                 )
-                                .map(setUser => (
-                                    <div key={setUser.id}>
-                                        <img src={setUser.avatarURL} className='img-fluid' alt="" />
-                                    </div>
+                                .map(setUser => setUser === '' ? (
+                                    `${default1}`
+                                ) : (
+                                    `${setUser.avatarURL}`
                                 ))
-                            }
+                            } className='img-fluid' alt='' />
+                            </div>
                             <select onChange={this.changeAuthedUser} className='form-select form-select-lg mb-3'>
                             <option>Select Profile</option>
                             {
@@ -64,11 +73,15 @@ class SignIn extends Component {
                                 ))
                             }
                             </select>
+                            
+                            <div className="footer">
+                                <h5>Sign in</h5>
+                                <IconButton 
+                                variant="outlined" 
+                                color='primary'
+                                type='submit'><ArrowForwardIosIcon /></IconButton>
+                            </div>
                         </section>
-                        
-                        <button
-                        type='submit'
-                        >Sign In</button>
                     </form>
                 </div>
             </div>
@@ -76,9 +89,10 @@ class SignIn extends Component {
     }
 }
 
-function mapStateToProps({users}) {
+function mapStateToProps({users, authedUser}) {
     return {
-        users: Object.keys(users).map((user) => users[user])
+        users: Object.keys(users).map((user) => users[user]),
+        authedUser
     }
 }
 

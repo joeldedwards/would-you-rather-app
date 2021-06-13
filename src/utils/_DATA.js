@@ -1,8 +1,13 @@
+import girl1 from '../avatars/girl-1.png'
+import guy1 from '../avatars/guy-1.png'
+import guy2 from '../avatars/guy-2.png'
+import girl2 from '../avatars/girl-2.png'
+
 let users = {
   sarahedo: {
     id: 'sarahedo',
     name: 'Sarah Edo',
-    avatarURL: '../avatars/girl-1.png',
+    avatarURL: girl1,
     answers: {
       "8xf0y6ziyjabvozdd253nd": 'optionOne',
       "6ni6ok3ym7mf1p33lnez": 'optionTwo',
@@ -14,17 +19,17 @@ let users = {
   tylermcginnis: {
     id: 'tylermcginnis',
     name: 'Tyler McGinnis',
-    avatarURL: '../avatars/guy-1.png',
+    avatarURL: guy1,
     answers: {
       "vthrdm985a262al8qx3do": 'optionOne',
       "xj352vofupe1dqz9emx13r": 'optionTwo',
     },
     questions: ['loxhs1bqm25b708cmbf3g', 'vthrdm985a262al8qx3do'],
   },
-  johndoe: {
-    id: 'johndoe',
-    name: 'John Doe',
-    avatarURL: '../avatars/guy-3.png',
+  janedoe: {
+    id: 'janedoe',
+    name: 'Jane Doe',
+    avatarURL: girl2,
     answers: {
       "xj352vofupe1dqz9emx13r": 'optionOne',
       "vthrdm985a262al8qx3do": 'optionTwo',
@@ -35,7 +40,7 @@ let users = {
   joeledwards: {
     id: 'joeledwards',
     name: 'Joel Edwards',
-    avatarURL: '../avatars/guy-2.png',
+    avatarURL: guy2,
     answers: {},
     questions: [],
   }
@@ -57,14 +62,14 @@ let questions = {
   },
   "6ni6ok3ym7mf1p33lnez": {
     id: '6ni6ok3ym7mf1p33lnez',
-    author: 'johndoe',
+    author: 'janedoe',
     timestamp: 1468479767190,
     optionOne: {
       votes: [],
       text: 'become a superhero',
     },
     optionTwo: {
-      votes: ['johndoe', 'sarahedo'],
+      votes: ['janedoe', 'sarahedo'],
       text: 'become a supervillain'
     }
   },
@@ -103,16 +108,16 @@ let questions = {
       text: 'find $50 yourself',
     },
     optionTwo: {
-      votes: ['johndoe'],
+      votes: ['janedoe'],
       text: 'have your best friend find $500'
     }
   },
   "xj352vofupe1dqz9emx13r": {
     id: 'xj352vofupe1dqz9emx13r',
-    author: 'johndoe',
+    author: 'janedoe',
     timestamp: 1493579767190,
     optionOne: {
-      votes: ['johndoe'],
+      votes: ['janedoe'],
       text: 'write JavaScript',
     },
     optionTwo: {
