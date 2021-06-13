@@ -1,8 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #fff;
@@ -104,11 +104,10 @@ main {
 }
 
 nav {
-  width: 200px;
+  width: 250px;
   padding: 2rem 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
 nav .logo {
@@ -132,8 +131,73 @@ nav .menu ul li a {
   display: flex;
   width: 100%;
   font-weight: 500;
+  border-radius: 8px;
+}
+
+nav .menu ul li a:hover {
+  background-color: #2ceac8;
+  background-color: #6846ec;
 }
 
 nav .menu ul li a svg {
   margin-right: 15px;
+}
+
+main section {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 250px);
+}
+
+main section header {
+  height: 70px;
+  justify-content: flex-end;
+  align-items: center;
+  display: flex;
+  padding: 0 2rem;
+}
+
+main section article {
+  padding: 2rem;
+}
+
+.inner-section {
+  max-width: 500px;
+}
+
+.inner-section h1 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.inner-section h2 {
+  text-align: center;
+  color: gray;
+  font-size: 20px;
+  margin-bottom: 25px;
+}
+
+.inner-section h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.inner-section h5 {
+  font-size: 20px;
+  text-align: center;
+  margin: 1rem auto;
+}
+
+.inner-section form input {
+  background-color: transparent;
+  color: white;
+  border: 2px solid rgb(73, 73, 73);
+  border-radius: 15px;
+  height: 50px;
+}
+
+.inner-section form input:focus {
+  background-color: transparent;
+  color: white;
+  outline: 0;
 }

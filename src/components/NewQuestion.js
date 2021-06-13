@@ -46,11 +46,11 @@ class NewQuestion extends Component {
         const {optionOne, optionTwo, toHome} = this.state
 
         if(toHome === true) {
-            return <Redirect to='/' />
+            return <Redirect to='/new' />
         }
 
         return (
-            <div>
+            <div className='container inner-section'>
                 <h1>Create New Question</h1>
                 <form onSubmit={this.handleSubmit}>
                     <h2>Complete the question</h2>
@@ -61,7 +61,9 @@ class NewQuestion extends Component {
                     placeholder='Enter Option One Text Here'
                     value={optionOne}
                     className='form-control' />
-
+                    
+                    <h5>or</h5>
+                    
                     <input 
                     type='text'
                     onChange={this.handleOptionTwoChange}
@@ -71,7 +73,7 @@ class NewQuestion extends Component {
                     
                     <button
                     type='submit'
-                    disabled={optionOne && optionTwo === ''}
+                    disabled={optionOne === ''}
                     >SUBMIT</button>
                 </form>
             </div>

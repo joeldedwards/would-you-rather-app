@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
-import logo from '../images/logo.png'
-import HomeIcon from '@material-ui/icons/Home'
-import CreateIcon from '@material-ui/icons/Create'
-import ShowChartIcon from '@material-ui/icons/ShowChart'
+import Nav from './Nav'
 import NewQuestion from './NewQuestion'
+import IconButton from '@material-ui/core/IconButton'
+import SettingsIcon from '@material-ui/icons/Settings'
 
 class Home extends Component {
     render() {
@@ -13,29 +11,17 @@ class Home extends Component {
         return (
             <div>
                 <main>
-                    <nav>
-                        <div className='logo'>
-                            <img src={logo} alt='' className='img-fluid logo-img' />
-                        </div>
-                        <div className="menu">
-                            <ul>
-                                <li>
-                                    <Link to='/'><HomeIcon/> Home</Link>
-                                </li>
-                                <li>
-                                    <Link to='/'><CreateIcon/> New Question</Link>
-                                </li>
-                                <li>
-                                    <Link to='/'><ShowChartIcon/> Leaderboard</Link>
-                                </li>
-                            </ul>
-                        </div>
-                        <div className="auth-user">
-                            {authedUser}
-                        </div>
-                    </nav>
+                    <Nav/>
                     <section>
-                        <NewQuestion />
+                        <header>
+                            {authedUser}
+                            <IconButton color='primary'>
+                                <SettingsIcon />
+                            </IconButton>
+                        </header>
+                        <article>
+                            <NewQuestion/>
+                        </article>
                     </section>
                 </main>                
             </div>
