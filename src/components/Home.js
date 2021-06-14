@@ -15,7 +15,14 @@ class Home extends Component {
                     <Nav/>
                     <section>
                         <header>
-                            {authedUser}
+                            {
+                                this.props.users.filter(
+                                    user => user.id === authedUser
+                                )
+                                .map(authedUser => (
+                                    `${authedUser.name}`
+                                ))
+                            }
                             <IconButton color='primary'>
                                 <SettingsIcon />
                             </IconButton>

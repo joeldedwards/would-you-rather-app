@@ -2,6 +2,7 @@ import girl1 from '../avatars/girl-1.png'
 import guy1 from '../avatars/guy-1.png'
 import guy2 from '../avatars/guy-2.png'
 import girl2 from '../avatars/girl-2.png'
+import girl4 from '../avatars/girl-4.png'
 
 let users = {
   sarahedo: {
@@ -16,15 +17,12 @@ let users = {
     },
     questions: ['8xf0y6ziyjabvozdd253nd', 'am8ehyc8byjqgar0jgpub9']
   },
-  tylermcginnis: {
-    id: 'tylermcginnis',
-    name: 'Tyler McGinnis',
-    avatarURL: guy1,
-    answers: {
-      "vthrdm985a262al8qx3do": 'optionOne',
-      "xj352vofupe1dqz9emx13r": 'optionTwo',
-    },
-    questions: ['loxhs1bqm25b708cmbf3g', 'vthrdm985a262al8qx3do'],
+  daschapolanco: {
+    id: 'daschapolanco',
+    name: 'Dascha Polanco',
+    avatarURL: girl4,
+    answers: {},
+    questions: ['smkpks8pditowsp3rcqp6i'],
   },
   janedoe: {
     id: 'janedoe',
@@ -36,6 +34,16 @@ let users = {
       "6ni6ok3ym7mf1p33lnez": 'optionTwo'
     },
     questions: ['6ni6ok3ym7mf1p33lnez', 'xj352vofupe1dqz9emx13r'],
+  },
+  tylermcginnis: {
+    id: 'tylermcginnis',
+    name: 'Tyler McGinnis',
+    avatarURL: guy1,
+    answers: {
+      "vthrdm985a262al8qx3do": 'optionOne',
+      "xj352vofupe1dqz9emx13r": 'optionTwo',
+    },
+    questions: ['loxhs1bqm25b708cmbf3g', 'vthrdm985a262al8qx3do'],
   },
   joeledwards: {
     id: 'joeledwards',
@@ -123,6 +131,19 @@ let questions = {
     optionTwo: {
       votes: ['tylermcginnis'],
       text: 'write Swift'
+    }
+  },
+  "smkpks8pditowsp3rcqp6i": {
+    id: 'smkpks8pditowsp3rcqp6i',
+    author: 'daschapolanco',
+    timestamp: 1623694255423,
+    optionOne: {
+      votes: [],
+      text: 'Million dollar house',
+    },
+    optionTwo: {
+      votes: [],
+      text: 'Million dollars cash'
     }
   },
 }

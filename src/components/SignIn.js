@@ -64,7 +64,7 @@ class SignIn extends Component {
                             } className='img-fluid' alt='' />
                             </div>
                             <select onChange={this.changeAuthedUser} className='form-select form-select-lg mb-3'>
-                            <option>Select Profile</option>
+                            <option>Guest</option>
                             {
                                 this.props.users.map((user) => (
                                     <option key={user.id} value={user.id}>

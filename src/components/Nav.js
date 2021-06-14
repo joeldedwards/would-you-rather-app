@@ -8,26 +8,24 @@ import ShowChartIcon from '@material-ui/icons/ShowChart'
 export default class Nav extends Component {
     render() {
         return (
-            <div> 
-                <nav>
-                    <div className='logo'>
-                        <img src={logo} alt='' className='img-fluid logo-img' />
-                    </div>
-                    <div className="menu">
-                        <ul>
-                            <li>
-                                <NavLink to='/' exact><HomeIcon/> Home</NavLink>
-                            </li>
-                            <li>
-                                <NavLink to='/new'><CreateIcon/> New Question</NavLink>
-                            </li>
-                            <li>
-                                <NavLink to='/leaderboard'><ShowChartIcon/> Leaderboard</NavLink>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
+            <nav>
+                <div className='logo'>
+                    <img src={logo} alt='' className='img-fluid logo-img' />
+                </div>
+                <div className='menu'>
+                    <ul className='list-unstyled'>
+                        <li>
+                            <NavLink to='/' exact><HomeIcon/> Home</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to='/new'><CreateIcon/> New Question</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to='/leaderboard'><ShowChartIcon/> Leaderboard</NavLink>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
         )
     }
 }
