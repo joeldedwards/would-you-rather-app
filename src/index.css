@@ -96,7 +96,7 @@ code {
 main {
   display: flex;
   min-height: 600px;
-  width: 80vw;
+  width: 100%;
   border-radius: 30px;
   background: #1e1f23;
   overflow: hidden;
@@ -200,4 +200,43 @@ main section article {
   background-color: transparent;
   color: white;
   outline: 0;
+}
+
+/* Leaderboard */
+
+.inner-section .scorecard {
+  background-color: black;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 50px;
+  padding: 2px 30px 0 0;
+}
+
+.inner-section .scorecard img {
+  width: 50px;
+}
+
+.inner-section .scorecard:nth-child(1) {
+  background-color: transparent;
+  flex-direction: column;
+}
+
+.inner-section .scorecard:nth-child(1) img {
+  width: 75px;
+  border: 3px solid #2ceac8;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.inner-section .scorecard:nth-child(1)::before {
+  content: '';
+  display: flex;
+  background-image: url('avatars/stars.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 50px;
+  height: 25px;
+  margin-bottom: 5px;
 }

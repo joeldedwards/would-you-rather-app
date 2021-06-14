@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import logo from '../images/logo.png'
 import HomeIcon from '@material-ui/icons/Home'
 import CreateIcon from '@material-ui/icons/Create'
@@ -16,13 +16,13 @@ export default class Nav extends Component {
                     <div className="menu">
                         <ul>
                             <li>
-                                <Link to='/'><HomeIcon/> Home</Link>
+                                <NavLink to='/' exact><HomeIcon/> Home</NavLink>
                             </li>
                             <li>
-                                <Link to='/new'><CreateIcon/> New Question</Link>
+                                <NavLink to='/new'><CreateIcon/> New Question</NavLink>
                             </li>
                             <li>
-                                <Link to='/leaderboard'><ShowChartIcon/> Leaderboard</Link>
+                                <NavLink to='/leaderboard'><ShowChartIcon/> Leaderboard</NavLink>
                             </li>
                         </ul>
                     </div>
