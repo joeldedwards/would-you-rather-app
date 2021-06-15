@@ -41,7 +41,7 @@ class SignIn extends Component {
         const {setUser, toNewQuestion} = this.state
 
         if(toNewQuestion === true) {
-            return <Redirect to='/new' />
+            return <Redirect to='/home' />
         }
 
         return (
@@ -51,20 +51,19 @@ class SignIn extends Component {
                         <img src={logo} alt='' className='logo' />
                         <section>
                             <div className='signin__avatar'>
-                            <img 
-                            src={
-                                this.props.users.filter(
-                                    user => user.id === setUser
-                                )
-                                .map(setUser => setUser === '' ? (
-                                    `${default1}`
-                                ) : (
-                                    `${setUser.avatarURL}`
-                                ))
-                            } className='img-fluid' alt='' />
+                                <img 
+                                src={
+                                    this.props.users.filter(
+                                        user => user.id === setUser
+                                    )
+                                    .map(setUser => setUser === '' ? (
+                                        `${default1}`
+                                    ) : (
+                                        `${setUser.avatarURL}`
+                                    ))
+                                } className='img-fluid' alt='' />
                             </div>
                             <select onChange={this.changeAuthedUser} className='form-select form-select-lg mb-3'>
-                            <option>Guest</option>
                             {
                                 this.props.users.map((user) => (
                                     <option key={user.id} value={user.id}>
