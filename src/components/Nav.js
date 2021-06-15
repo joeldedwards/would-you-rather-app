@@ -15,7 +15,7 @@ export default class Nav extends Component {
                 <div className='menu'>
                     <ul className='list-unstyled'>
                         <li>
-                            <NavLink to='/' exact><HomeIcon/> Home</NavLink>
+                            <NavLink to='/home'><HomeIcon/> Home</NavLink>
                         </li>
                         <li>
                             <NavLink to='/new'><CreateIcon/> New Question</NavLink>

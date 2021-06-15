@@ -34,8 +34,9 @@ code {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  padding: 5em 0;
 }
 
 .logo {
@@ -75,6 +76,7 @@ code {
 
 .SignIn section .signin__avatar {
   margin: 1rem auto 1.5rem;
+  min-height: 150px;
 }
 
 .SignIn section .signin__avatar img {
@@ -203,6 +205,11 @@ main section article {
   border: 2px solid rgb(73, 73, 73);
   border-radius: 15px;
   height: 50px;
+}
+
+.inner-section form button {
+  width: 100%;
+  margin-top: 15px;
 }
 
 .inner-section form input:focus {

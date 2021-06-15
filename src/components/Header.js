@@ -16,7 +16,8 @@ class Header extends Component {
 
         this.setState(() => ({
             authedUser: null,
-            toNewQuestion: false
+            toNewQuestion: false,
+            toHome: false
         }))
     }
 

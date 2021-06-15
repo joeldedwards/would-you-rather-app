@@ -1,8 +1,10 @@
-import {saveQuestion} from '../utils/_API'
+import { saveQuestion, saveQuestionAnswer } from '../utils/_API'
+import { addAnswerToUser, addQuestionToUser } from '../actions/users'
 import { showLoading, hideLoading } from 'react-redux-loading'
 
 export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS'
 export const SAVE_QUESTION = 'SAVE_QUESTION'
+export const SAVE_QUESTION_ANSWER = 'SAVE_QUESTION_ANSWER'
 
 export function receiveQuestions(questions) {
     return {
@@ -18,6 +20,15 @@ function addQuestion(question) {
     }
 }
 
+function addQuestionAnswer({ authedUser, qid, answer }) {
+    return {
+        type: SAVE_QUESTION_ANSWER,
+        authedUser,
+        qid,
+        answer
+    }
+}
+
 export function handleSaveQuestion(optionOne, optionTwo) {
     return(dispatch, getState) => {
         const {authedUser} = getState()
@@ -29,7 +40,30 @@ export function handleSaveQuestion(optionOne, optionTwo) {
             optionTwoText: optionTwo, 
             author: authedUser
         })
-        .then((question) => dispatch(addQuestion(question)))
+        .then((question) => {
+            dispatch(addQuestion(question))
+            dispatch(addQuestionToUser(question))
+        })
+        .then(() => dispatch(hideLoading()))
+    }
+}
+
+export function handleSaveQuestionAnswer(question, answer) {
+    return(dispatch, getState) => {
+        const {authedUser} = getState()
+        const qid = question.id
+        
+        dispatch(showLoading())
+
+        return saveQuestionAnswer({
+            qid,
+            answer,
+            authedUser
+        })
+        .then(() => {
+            dispatch(addQuestionAnswer({ authedUser, qid, answer }))
+            dispatch(addAnswerToUser({ authedUser, qid, answer }))
+        })
         .then(() => dispatch(hideLoading()))
     }
 }

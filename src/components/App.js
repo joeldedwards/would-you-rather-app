@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { handleInitialData } from '../actions/shared'
 import { LoadingBar } from 'react-redux-loading'
-// import SplashScreen from './SplashScreen'
+import SplashScreen from './SplashScreen'
 import Nav from './Nav'
 import Header from './Header'
 import SignIn from './SignIn'
@@ -21,6 +21,7 @@ class App extends Component {
             <Router>
                 <Fragment>
                 <LoadingBar/>
+                <Route path='/' exact component={SplashScreen} />
                 <Route path='/signin' component={SignIn} />
                 <div className='container'>
                     {
@@ -33,7 +34,7 @@ class App extends Component {
                         <section>
                             <Header/>
                             <article>
-                                <Route path='/' exact component={Home} />
+                                <Route path='/home' component={Home} />
                                 <Route path='/new' component={NewQuestion} />
                                 <Route path='/leaderboard' component={Leaderboard} />
                             </article>

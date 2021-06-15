@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import {handleSaveQuestion} from '../actions/questions'
+import { handleSaveQuestion } from '../actions/questions'
 import { Redirect } from 'react-router-dom'
 
 class NewQuestion extends Component {
@@ -46,7 +46,7 @@ class NewQuestion extends Component {
         const {optionOne, optionTwo, toHome} = this.state
 
         if(toHome === true) {
-            return <Redirect to='/new' />
+            return <Redirect to='/home' />
         }
 
         return (
@@ -73,7 +73,8 @@ class NewQuestion extends Component {
                     
                     <button
                     type='submit'
-                    disabled={optionOne === ''}
+                    className='btn'
+                    disabled={optionOne === '' || optionTwo === ''}
                     >SUBMIT</button>
                 </form>
             </div>
