@@ -5,8 +5,8 @@ import Question from './Question'
 class Home extends Component {
     render() {
         return (
-            <div>
-                <ul className='dashboard-list'>
+            <div className='container inner-section'>
+                <ul className='list-unstyled'>
                 {this.props.questionIds.map((id) => (
                     <li key={id}>
                         <Question id={id} />

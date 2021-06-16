@@ -18,7 +18,7 @@ export default class Nav extends Component {
                             <NavLink to='/home'><HomeIcon/> Home</NavLink>
                         </li>
                         <li>
-                            <NavLink to='/new'><CreateIcon/> New Question</NavLink>
+                            <NavLink to='/add'><CreateIcon/> New Question</NavLink>
                         </li>
                         <li>
                             <NavLink to='/leaderboard'><ShowChartIcon/> Leaderboard</NavLink>

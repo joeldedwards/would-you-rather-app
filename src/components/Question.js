@@ -1,33 +1,34 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link, withRouter } from 'react-router-dom'
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 
 class Question extends Component {
 
     render() {
-        const {question} = this.props
+        const { question } = this.props
     
         const {
-            id, author, optionOne, optionTwo
+            id, author, optionOne
         } = question
 
         return (
-            <div>
-                <Link to={`/question/${id}`}>
-                    {author}
-                    {optionOne.text}
-                    {optionTwo.text}
-                </Link>
+            <div className='questionCard'>
+                <img src={this.props.users[author].avatarURL} alt='' className='img-fluid'/>
+                {author}
+                {optionOne.text}...
+                <Link to={`/question/${id}`}><ArrowForwardIosIcon/></Link>
             </div>
         )
     }
 }
 
-function mapStateToProps({authedUser, questions}, {id}) {
+function mapStateToProps({authedUser, questions, users}, {id}) {
     const question = questions[id]
 
     return {
         authedUser,
+        users,
         question
     }
 }

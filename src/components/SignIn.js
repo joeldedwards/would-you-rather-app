@@ -51,19 +51,17 @@ class SignIn extends Component {
                         <img src={logo} alt='' className='logo' />
                         <section>
                             <div className='signin__avatar'>
-                                <img 
-                                src={
-                                    this.props.users.filter(
-                                        user => user.id === setUser
-                                    )
-                                    .map(setUser => setUser === '' ? (
-                                        `${default1}`
-                                    ) : (
-                                        `${setUser.avatarURL}`
-                                    ))
-                                } className='img-fluid' alt='' />
+                            <img 
+                            src={
+                                setUser === '' ? (
+                                    `${default1}`
+                                ) : (
+                                    `${this.props.users[0].avatarURL}`
+                                )
+                            } className='img-fluid' alt='' />
                             </div>
                             <select onChange={this.changeAuthedUser} className='form-select form-select-lg mb-3'>
+                            <option>Select Profile</option>
                             {
                                 this.props.users.map((user) => (
                                     <option key={user.id} value={user.id}>
@@ -78,6 +76,7 @@ class SignIn extends Component {
                                 <IconButton 
                                 variant="outlined" 
                                 color='primary'
+                                disabled={setUser === ''}
                                 type='submit'><ArrowForwardIosIcon /></IconButton>
                             </div>
                         </section>

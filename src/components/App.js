@@ -35,7 +35,7 @@ class App extends Component {
                             <Header/>
                             <article>
                                 <Route path='/home' component={Home} />
-                                <Route path='/new' component={NewQuestion} />
+                                <Route path='/add' component={NewQuestion} />
                                 <Route path='/leaderboard' component={Leaderboard} />
                             </article>
                         </section>

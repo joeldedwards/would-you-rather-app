@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import { removeAuthedUser } from '../actions/authedUser'
 import IconButton from '@material-ui/core/IconButton'
-import SettingsIcon from '@material-ui/icons/Settings'
+import ExitToAppIcon from '@material-ui/icons/ExitToApp'
 
 class Header extends Component {
 
@@ -35,7 +35,7 @@ class Header extends Component {
                     <IconButton 
                     color='primary' 
                     onClick={this.handleSignOut}>
-                        <SettingsIcon />
+                        <ExitToAppIcon />
                     </IconButton>
                 </header>
             </div>

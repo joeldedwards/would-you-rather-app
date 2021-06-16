@@ -19,8 +19,7 @@ code {
 }
 
 .btn {
-  background: linear-gradient(45deg, #2ca74a 30%, #c1f834 90%);
-  box-shadow: 0 3px 5px 2px rgba(255, 105, 135, .3);
+  background-color: #6846ec;
   color: white;
   height: 50px;
 }
@@ -131,7 +130,8 @@ nav .menu ul {
 }
 
 nav .menu ul li {
-  margin-bottom: 10px;
+  margin-bottom: 25px;
+  position: relative;
 }
 
 nav .menu ul li a {
@@ -144,7 +144,28 @@ nav .menu ul li a {
   border-radius: 8px;
 }
 
+nav .menu ul li a::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: -16px;
+  top: 0px;
+  width: 5px;
+  height: 44px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+nav .menu ul li a.active::before {
+  background-color: #6846ec;
+}
+
+nav .menu ul li a.active {
+  background-color: #6846ec;
+}
+
 nav .menu ul li a:hover {
+  color: black;
   background-color: #6846ec;
 }
 
@@ -260,4 +281,18 @@ main section article {
   width: 50px;
   height: 25px;
   margin-bottom: 5px;
+}
+
+.questionCard{
+  background-color: black;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.questionCard img {
+  width: 50px;
 }
