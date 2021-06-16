@@ -50,7 +50,7 @@ let users = {
     name: 'Joel Edwards',
     avatarURL: guy2,
     answers: {},
-    questions: [],
+    questions: ['bawro7tmz6mj4sjsjqvi', 'qrw72iulz1agknopk0rvm8'],
   }
 }
 
@@ -144,6 +144,32 @@ let questions = {
     optionTwo: {
       votes: [],
       text: 'Million dollars cash'
+    }
+  },
+  "bawro7tmz6mj4sjsjqvi": {
+    id: 'bawro7tmz6mj4sjsjqvi',
+    author: 'joeledwards',
+    timestamp: 1623802236361,
+    optionOne: {
+      votes: [],
+      text: 'Become a hero',
+    },
+    optionTwo: {
+      votes: [],
+      text: 'Become a villain'
+    }
+  },
+  "qrw72iulz1agknopk0rvm8": {
+    id: 'qrw72iulz1agknopk0rvm8',
+    author: 'joeledwards',
+    timestamp: 1623802211840,
+    optionOne: {
+      votes: [],
+      text: 'Marry Jennifer Lopez',
+    },
+    optionTwo: {
+      votes: [],
+      text: 'Marry Kerry Washington'
     }
   },
 }
