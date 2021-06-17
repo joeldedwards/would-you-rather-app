@@ -22,11 +22,12 @@ class App extends Component {
                 <Fragment>
                 <LoadingBar/>
                 <Route path='/' exact component={SplashScreen} />
-                <Route path='/signin' component={SignIn} />
                 <div className='container'>
                     {
-                    this.props.loading === true 
-                    ? null 
+                    this.props.authedUser === null 
+                    ? (
+                      <Route path='/signin' component={SignIn} />
+                    )
                     : 
                     <div>
                       <main>
@@ -51,7 +52,7 @@ class App extends Component {
 
 function mapStateToProps({authedUser}) {
     return {
-      loading: authedUser === null
+      authedUser
     }
   }
 

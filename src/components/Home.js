@@ -7,21 +7,28 @@ class Home extends Component {
         return (
             <div className='container inner-section'>
                 <ul className='list-unstyled'>
-                {this.props.questionIds.map((id) => (
-                    <li key={id}>
-                        <Question id={id} />
-                    </li>
-                ))}
+                {
+                    this.props.answeredQs.map((id) => (
+                        <li key={id}>
+                            <Question id={id} />
+                        </li>
+                    ))
+                }
                 </ul>
             </div>
         )
     }
 }
 
-function mapStateToProps({questions}) {
+function mapStateToProps({questions, authedUser}) {
     return {
-        questionIds: Object.keys(questions)
-        .sort((a, b) => questions[b].timestamp - questions[a].timestamp)
+        answeredQs: Object.values(questions)
+        .filter(question => question.optionOne.votes.includes(authedUser)
+        || question.optionTwo.votes.includes(authedUser))
+        .sort((a, b) => questions[b].timestamp - questions[a].timestamp),
+        unAnsweredQs: Object.keys(questions)
+        .sort((a, b) => questions[b].timestamp - questions[a].timestamp),
+        authedUser
     }
 }
 

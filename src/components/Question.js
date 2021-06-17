@@ -15,8 +15,10 @@ class Question extends Component {
         return (
             <div className='questionCard'>
                 <img src={this.props.users[author].avatarURL} alt='' className='img-fluid'/>
-                {author}
-                {optionOne.text}...
+                <div className='info'>
+                    <div className='author'>{`@${author}`}</div>
+                    <div className='option-1'>{`${optionOne.text}...`}</div>
+                </div>
                 <Link to={`/question/${id}`}><ArrowForwardIosIcon/></Link>
             </div>
         )

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
-import { removeAuthedUser } from '../actions/authedUser'
+import { handleSignOut } from '../actions/authedUser'
 import IconButton from '@material-ui/core/IconButton'
 import ExitToAppIcon from '@material-ui/icons/ExitToApp'
 
@@ -12,17 +12,15 @@ class Header extends Component {
         
         const {dispatch} = this.props
 
-        dispatch(removeAuthedUser())
+        dispatch(handleSignOut())
 
         this.setState(() => ({
-            authedUser: null,
-            toNewQuestion: false,
-            toHome: false
+            authedUser: null
         }))
     }
 
     render() {
-        const {authedUser, authedName} = this.props
+        const {authedUser, authedName, authedAvatar} = this.props
 
         if(authedUser === null) {
             return <Redirect to='/signin' />
@@ -31,6 +29,7 @@ class Header extends Component {
         return (
             <div>
                 <header>
+                    <img src={authedAvatar} alt='' className='img-fluid avatar-icon'/>
                     <h1>{`Hello, ${authedName}`}</h1>
                     <IconButton 
                     color='primary' 
@@ -46,6 +45,7 @@ class Header extends Component {
 function mapStateToProps({users, authedUser}) {
     return {
         authedName: users[authedUser].name,
+        authedAvatar: users[authedUser].avatarURL,
         authedUser
     }
 }
