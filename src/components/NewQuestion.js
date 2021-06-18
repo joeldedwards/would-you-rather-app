@@ -30,14 +30,14 @@ class NewQuestion extends Component {
         e.preventDefault()
 
         const {optionOne, optionTwo} = this.state
-        const {dispatch, id} = this.props
+        const {dispatch} = this.props
 
-        dispatch(handleSaveQuestion(optionOne, optionTwo, id))
+        dispatch(handleSaveQuestion(optionOne, optionTwo))
 
         this.setState(() => ({
             optionOne: '',
             optionTwo: '',
-            toHome: id ? false : true
+            toHome: true
         }))
     }
 

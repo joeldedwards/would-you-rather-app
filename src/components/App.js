@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { handleInitialData } from '../actions/shared'
 import { LoadingBar } from 'react-redux-loading'
@@ -35,9 +35,11 @@ class App extends Component {
                         <section>
                             <Header/>
                             <article>
-                                <Route path='/home' component={Home} />
-                                <Route path='/add' component={NewQuestion} />
-                                <Route path='/leaderboard' component={Leaderboard} />
+                                <Switch>
+                                  <Route path='/home' component={Home} />
+                                  <Route path='/add' component={NewQuestion} />
+                                  <Route path='/leaderboard' component={Leaderboard} />
+                                </Switch>
                             </article>
                         </section>
                       </main>

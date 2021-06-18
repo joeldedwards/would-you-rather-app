@@ -251,6 +251,11 @@ main section article {
 
 /* Leaderboard */
 
+.inner-section .stats-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .inner-section .scorecard {
   background-color: black;
   margin-bottom: 15px;
@@ -259,6 +264,8 @@ main section article {
   align-items: center;
   border-radius: 50px;
   padding: 2px 30px 0 0;
+  width: 100%;
+  order: 4;
 }
 
 .inner-section .scorecard img {
@@ -269,10 +276,12 @@ main section article {
   background-color: transparent;
   flex-direction: column;
   padding: 0;
+  width: 33.3333%;
+  order: 2;
 }
 
 .inner-section .scorecard:nth-child(1) img {
-  width: 100px;
+  width: 125px;
   border: 3px solid #2ceac8;
   border-radius: 50%;
   margin-bottom: 15px;
@@ -284,9 +293,43 @@ main section article {
   background-image: url('avatars/stars.png');
   background-repeat: no-repeat;
   background-size: contain;
-  width: 50px;
-  height: 25px;
-  margin-bottom: 5px;
+  width: 75px;
+  height: 35px;
+  margin-bottom: 10px;
+}
+
+/* 2nd Place */
+.inner-section .scorecard:nth-child(2) {
+  background-color: transparent;
+  flex-direction: column;
+  padding: 0;
+  width: 33.3333%;
+  order: 1;
+  justify-content: flex-end;
+}
+
+.inner-section .scorecard:nth-child(2) img {
+  width: 95px;
+  border: 3px solid #2ceac8;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+/* 3rd Place */
+.inner-section .scorecard:nth-child(3) {
+  background-color: transparent;
+  flex-direction: column;
+  padding: 0;
+  width: 33.3333%;
+  order: 3;
+  justify-content: flex-end;
+}
+
+.inner-section .scorecard:nth-child(3) img {
+  width: 75px;
+  border: 3px solid #2ceac8;
+  border-radius: 50%;
+  margin-bottom: 15px;
 }
 
 .questionCard{

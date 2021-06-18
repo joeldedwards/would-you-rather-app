@@ -22,6 +22,8 @@ class SignIn extends Component {
         this.setState(() => ({
             setUser
         }))
+
+        console.log(setUser)
     }
 
     handleSubmit = (e) => {
@@ -61,7 +63,7 @@ class SignIn extends Component {
                             } className='img-fluid' alt='' />
                             </div>
                             <select onChange={this.changeAuthedUser} className='form-select form-select-lg mb-3'>
-                            <option>Select Profile</option>
+                            <option value=''>Select Profile</option>
                             {
                                 this.props.users.map((user) => (
                                     <option key={user.id} value={user.id}>

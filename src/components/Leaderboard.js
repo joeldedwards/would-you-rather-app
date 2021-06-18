@@ -11,7 +11,7 @@ class Leaderboard extends Component {
             <div className='container inner-section'>
                 <LoadingBar />
                 <h1>Leaderboard</h1>
-                <ul className='list-unstyled'>
+                <ul className='list-unstyled stats-list'>
                     {
                         scoreStats.map((user) => (
                             <li key={user.id} className='scorecard'>
