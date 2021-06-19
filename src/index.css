@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 body {
   margin: 0;
@@ -358,4 +359,73 @@ main section article {
 
 .questionCard .option-1 {
   font-size: 14px;
+}
+
+/* View Question */
+
+.hero {
+  background-color: black;
+  border-radius: 15px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.hero img {
+  max-width: 75px;
+  margin-bottom: 15px;
+}
+
+.hero h2 {
+  margin: 0;
+}
+
+input[type=radio] {
+  display: none;
+}
+input[type=radio]:not(:disabled) ~ label {
+  cursor: pointer;
+}
+input[type=radio]:disabled ~ label {
+  color: #bcc2bf;
+  border-color: #bcc2bf;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+label {
+  height: 100%;
+  display: flex;
+  background: transparent;
+  border: 2px solid #2ceac8;
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+
+label p {
+  margin: 0;
+}
+
+input[type=radio]:checked + label {
+  background: #2ceac8;
+  color: black;
+  justify-content: space-between;
+}
+
+input[type=radio]:checked + label::after {
+  color: black;
+  font-family: 'Material Icons';
+  content: '\e86c';
+  font-size: 30px;
+  height: 30px;
+  width: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 50%;
 }

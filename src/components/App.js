@@ -10,6 +10,7 @@ import SignIn from './SignIn'
 import Home from './Home'
 import NewQuestion from './NewQuestion'
 import Leaderboard from './Leaderboard'
+import ViewQuestion from './ViewQuestion'
 
 class App extends Component {
     componentDidMount() {
@@ -39,6 +40,7 @@ class App extends Component {
                                   <Route path='/home' component={Home} />
                                   <Route path='/add' component={NewQuestion} />
                                   <Route path='/leaderboard' component={Leaderboard} />
+                                  <Route path='/question/:id' component={ViewQuestion} />
                                 </Switch>
                             </article>
                         </section>

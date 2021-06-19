@@ -1,0 +1,13 @@
+@media only screen and (max-width: 991px) {
+    nav {
+        display: none;
+    }
+
+    main {
+        background: transparent;
+    }
+
+    main section {
+        width: 100%;
+    }
+}

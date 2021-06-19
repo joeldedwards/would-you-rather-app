@@ -22,30 +22,29 @@ class SignIn extends Component {
         this.setState(() => ({
             setUser
         }))
-
-        console.log(setUser)
     }
 
     handleSubmit = (e) => {
         e.preventDefault()
         
         const {setUser} = this.state
-        const {dispatch, id} = this.props
+        const {dispatch} = this.props
 
         dispatch(setAuthedUser(setUser))
 
         this.setState(() => ({
-            toNewQuestion: id ? false : true
+            toNewQuestion: true
         }))
+        
     }
 
     render() {
         const {setUser, toNewQuestion} = this.state
 
         if(toNewQuestion === true) {
-            return <Redirect to='/home' />
+            return <Redirect to='/add' />
         }
-
+        
         return (
             <div>
                 <div className='splash-screen SignIn'>
