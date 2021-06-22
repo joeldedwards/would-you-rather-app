@@ -8,7 +8,7 @@ class Home extends Component {
             <div className='container inner-section'>
                 <ul className='list-unstyled'>
                 {
-                    this.props.answeredQs.map((id) => (
+                    this.props.unAnsweredQs.map((id) => (
                         <li key={id}>
                             <Question id={id} />
                         </li>
@@ -20,11 +20,18 @@ class Home extends Component {
     }
 }
 
-function mapStateToProps({questions, authedUser}) {
+function mapStateToProps({questions, users, authedUser}) {
+    const user = users[authedUser]
+    const answeredQs = Object.keys(user.answers)
+        .sort((a, b) => questions[b].timestamp - questions[a].timestamp)
+    const unAnsweredQs = Object.keys(questions)
+        .filter((qid) => !answeredQs.includes(qid))
+        .sort((a, b) => questions[b].timestamp - questions[a].timestamp)
+
     return {
         authedUser,
-        answeredQs: Object.keys(questions)
-        .sort((a, b) => questions[b].timestamp - questions[a].timestamp)
+        answeredQs,
+        unAnsweredQs
     }
 }
 
