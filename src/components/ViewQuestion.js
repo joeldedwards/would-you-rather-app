@@ -30,17 +30,35 @@ class ViewQuestion extends Component {
         const { optionOne, optionTwo } = question
         const { showResults } = this.state
 
+        const o1TotalVotes = question.optionOne.votes.length
+        const o2TotalVotes = question.optionTwo.votes.length
+        const oTotal = o1TotalVotes + o2TotalVotes
+        const o1Percent = o1TotalVotes / oTotal * 100
+        const o2Percent = o2TotalVotes / oTotal * 100
+        const o1Percentage = o1Percent.toFixed(1) + '%'
+        const o2Percentage = o2Percent.toFixed(1) + '%'
+
+        const pBarStyle = {
+            height: '25px'
+        }
+        const optionOnepbar = {
+            width: o1Percentage
+        }
+        const optionTwopbar = {
+            width: o2Percentage
+        }
+
         return (
             <div className='container inner-section'>
                 <div className="hero">
                     <img src={authorAvatar} alt='' className='img-fluid'/>
                     <h2>{authorName} asks</h2>
                 </div>
+                <h1>Would You Rather...</h1>
                 {
                     !showResults ? 
                 (
                     <div>
-                        <h1>Would You Rather...</h1>
                         <form onSubmit={this.handleSubmit}>
                             <div>
                                 <input 
@@ -75,18 +93,23 @@ class ViewQuestion extends Component {
                 (
                 <div>
                     <div>
-                        <p>{optionOne.text}</p>
-                        <div>{question.optionOne.votes.length}</div>
+                        <div>{optionOne.text}</div>
+                        <div className="progress" style={pBarStyle}>
+                            <div className="progress-bar" role="progressbar" style={optionOnepbar}>
+                                {o1Percentage}
+                            </div>
+                        </div>
+                        <div>{`${o1TotalVotes} out of ${oTotal} votes`}</div>
                     </div>
 
                     <div>
-                        <p>{optionTwo.text}</p>
-                        <div>{question.optionTwo.votes.length}</div>
-                    </div>
-
-                    <div>
-                        <p>Total</p>
-                        <div>{question.optionTwo.votes.length}</div>
+                        <div>{optionTwo.text}</div>
+                        <div className="progress" style={pBarStyle}>
+                            <div className="progress-bar" role="progressbar" style={optionTwopbar}>
+                                {o2Percentage}
+                            </div>
+                        </div>
+                        <div>{`${o2TotalVotes} out of ${oTotal} votes`}</div>
                     </div>
                 </div>
                 )

@@ -3,6 +3,7 @@
         "authed",
         "avatar",
         "leaderboard",
+        "progressbar",
         "signin",
         "unstyled",
         "user"
