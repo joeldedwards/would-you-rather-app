@@ -48,17 +48,16 @@ export function handleSaveQuestion(optionOne, optionTwo) {
     }
 }
 
-export function handleSaveQuestionAnswer(question, answer) {
+export function handleSaveQuestionAnswer(qid, answer) {
     return(dispatch, getState) => {
         const {authedUser} = getState()
-        const qid = question.id
         
         dispatch(showLoading())
 
         return saveQuestionAnswer({
+            authedUser,
             qid,
-            answer,
-            authedUser
+            answer
         })
         .then(() => {
             dispatch(addQuestionAnswer({ authedUser, qid, answer }))

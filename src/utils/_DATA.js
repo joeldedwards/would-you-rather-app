@@ -151,11 +151,11 @@ let questions = {
     author: 'joeledwards',
     timestamp: 1623802236361,
     optionOne: {
-      votes: [],
+      votes: ['joeledwards', 'daschapolanco', 'tylermcginnis'],
       text: 'Become a hero',
     },
     optionTwo: {
-      votes: [],
+      votes: ['janedoe'],
       text: 'Become a villain'
     }
   },
