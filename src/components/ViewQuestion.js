@@ -92,24 +92,26 @@ class ViewQuestion extends Component {
                 : 
                 (
                 <div>
-                    <div>
-                        <div>{optionOne.text}</div>
+                    <div className="optionResults">
+                        <h3>{optionOne.text}</h3>
                         <div className="progress" style={pBarStyle}>
-                            <div className="progress-bar" role="progressbar" style={optionOnepbar}>
-                                {o1Percentage}
-                            </div>
+                            <div className="progress-bar" role="progressbar" style={optionOnepbar}></div>
                         </div>
-                        <div>{`${o1TotalVotes} out of ${oTotal} votes`}</div>
+                        <div className="progress-footer">
+                            <div className="total-votes">{`${o1TotalVotes} out of ${oTotal} votes`}</div>
+                            <div className="percentage">{o1Percentage}</div>
+                        </div>
                     </div>
 
-                    <div>
-                        <div>{optionTwo.text}</div>
+                    <div className="optionResults">
+                        <h3>{optionTwo.text}</h3>
                         <div className="progress" style={pBarStyle}>
-                            <div className="progress-bar" role="progressbar" style={optionTwopbar}>
-                                {o2Percentage}
-                            </div>
+                            <div className="progress-bar" role="progressbar" style={optionTwopbar}></div>
                         </div>
-                        <div>{`${o2TotalVotes} out of ${oTotal} votes`}</div>
+                        <div className="progress-footer">
+                            <div className="total-votes">{`${o2TotalVotes} out of ${oTotal} votes`}</div>
+                            <div className="percentage">{o2Percentage}</div>
+                        </div>
                     </div>
                 </div>
                 )

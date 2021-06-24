@@ -430,6 +430,43 @@ input[type=radio]:checked + label::after {
   border-radius: 50%;
 }
 
+.optionResults {
+  margin-bottom: 25px;
+}
+
 .progress {
-  background-color: rgb(233, 236, 239, 0.1);
+  background-color: transparent;
+  -webkit-box-shadow: inset 10px 10px 25px 5px rgba(0,0,0,0.25);
+  -moz-box-shadow: inset 10px 10px 25px 5px rgba(0,0,0,0.25);
+  box-shadow: inset 10px 10px 25px 5px rgba(0,0,0,0.25);
+  border-radius: 20px;
+}
+
+.progress-bar {
+  border-radius: 20px;
+  background: rgba(164,44,255,1);
+  background: -moz-linear-gradient(left, rgba(164,44,255,1) 0%, rgba(248,73,255,1) 50%, rgba(255,255,255,1) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(164,44,255,1)), color-stop(50%, rgba(248,73,255,1)), color-stop(100%, rgba(255,255,255,1)));
+  background: -webkit-linear-gradient(left, rgba(164,44,255,1) 0%, rgba(248,73,255,1) 50%, rgba(255,255,255,1) 100%);
+  background: -o-linear-gradient(left, rgba(164,44,255,1) 0%, rgba(248,73,255,1) 50%, rgba(255,255,255,1) 100%);
+  background: -ms-linear-gradient(left, rgba(164,44,255,1) 0%, rgba(248,73,255,1) 50%, rgba(255,255,255,1) 100%);
+  background: linear-gradient(to right, rgba(164,44,255,1) 0%, rgba(248,73,255,1) 50%, rgba(255,255,255,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a42cff', endColorstr='#ffffff', GradientType=1 );
+}
+
+.progress-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  color: #FFF;
+  margin: 10px 0 0;
+}
+
+.progress-footer .total-votes {
+  color: #999;
+}
+
+.progress-footer .percentage {
+  font-size: 13px;
 }
