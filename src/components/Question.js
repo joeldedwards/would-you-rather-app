@@ -13,14 +13,14 @@ class Question extends Component {
         } = question
 
         return (
-            <div className='questionCard'>
+            <Link to={`/question/${id}`} className='questionCard'>
                 <img src={this.props.users[author].avatarURL} alt='' className='img-fluid'/>
                 <div className='info'>
                     <div className='author'>{`@${author}`}</div>
                     <div className='option-1'>{`${optionOne.text}...`}</div>
                 </div>
-                <Link to={`/question/${id}`}><ArrowForwardIosIcon/></Link>
-            </div>
+                <ArrowForwardIosIcon/>
+            </Link>
         )
     }
 }

@@ -52,7 +52,7 @@ class ViewQuestion extends Component {
             <div className='container inner-section'>
                 <div className="hero">
                     <img src={authorAvatar} alt='' className='img-fluid'/>
-                    <h2>{authorName} asks</h2>
+                    <h2>{authorName} {!showResults ? 'asks' : 'asked'}</h2>
                 </div>
                 <h1>Would You Rather...</h1>
                 {

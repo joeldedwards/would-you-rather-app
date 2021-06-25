@@ -10,21 +10,21 @@ class Header extends Component {
     handleSignOut = (e) => {
         e.preventDefault()
         
-        const {dispatch} = this.props
+        const {dispatch, authedUser} = this.props
 
         dispatch(handleSignOut())
 
         this.setState(() => ({
             authedUser: null
         }))
-    }
-
-    render() {
-        const {authedUser, authedName, authedAvatar} = this.props
 
         if(authedUser === null) {
             return <Redirect to='/signin' />
         }
+    }
+
+    render() {
+        const {authedName, authedAvatar} = this.props
 
         return (
             <div>
