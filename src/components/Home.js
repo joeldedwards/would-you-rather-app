@@ -8,9 +8,9 @@ class Home extends Component {
             <div className='container inner-section'>
                 <ul className='list-unstyled'>
                 {
-                    this.props.answeredQs.map((id) => (
+                    this.props.unAnsweredQs.map((id) => (
                         <li key={id}>
-                            <Question id={id} voted={true} />
+                            <Question id={id} />
                         </li>
                     ))
                 }

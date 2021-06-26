@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Redirect } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import { handleSignOut } from '../actions/authedUser'
 import IconButton from '@material-ui/core/IconButton'
 import ExitToAppIcon from '@material-ui/icons/ExitToApp'
@@ -18,7 +18,7 @@ class Header extends Component {
             authedUser: null
         }))
 
-        return <Redirect to='/signin' />
+        this.props.history.push('/signin')
     }
 
     render() {
@@ -48,4 +48,4 @@ function mapStateToProps({users, authedUser}) {
     }
 }
 
-export default connect(mapStateToProps)(Header)
+export default withRouter(connect(mapStateToProps)(Header))

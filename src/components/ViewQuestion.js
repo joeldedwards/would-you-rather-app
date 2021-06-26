@@ -22,6 +22,7 @@ class ViewQuestion extends Component {
     }
 
     render() {
+        const { optionSelected } = this.state
         const { id, voted, question, authorAvatar, authorName } = this.props
         const { optionOne, optionTwo } = question
         
@@ -33,7 +34,7 @@ class ViewQuestion extends Component {
                 </div>
                 <h1>Would You Rather...</h1>
                 {
-                    voted === false ? 
+                    !voted ? 
                 (
                     <div>
                         <form onSubmit={this.handleSubmit}>
@@ -62,12 +63,11 @@ class ViewQuestion extends Component {
                             <button
                             type='submit'
                             className='btn'
+                            disabled={optionSelected === null || optionSelected === ''}
                             >SUBMIT</button>
                         </form>
                     </div>
-                )
-                : 
-                ( 
+                ) : ( 
                     <VoteResult id={id} />
                 )}
             </div>
@@ -76,18 +76,19 @@ class ViewQuestion extends Component {
 }
 
 function mapStateToProps({authedUser, users, questions}, props) {
-    const {id, voted} = props.match.params
+    const {id} = props.match.params
     const question = questions[id]
     const user = users[question.author]
+    const loggedUser = users[authedUser]
     
     return {
         id,
-        voted,
         authedUser,
         question: question,
         user: user,
         authorAvatar: user.avatarURL,
-        authorName: user.name
+        authorName: user.name,
+        voted: Object.keys(loggedUser.answers).includes(id),
     }
 }
 
