@@ -88,7 +88,7 @@ function mapStateToProps({authedUser, users, questions}, props) {
         user: user,
         authorAvatar: user.avatarURL,
         authorName: user.name,
-        voted: Object.keys(loggedUser.answers).includes(id),
+        voted: Object.keys(loggedUser.answers).includes(id)
     }
 }
 

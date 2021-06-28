@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 body {
@@ -439,7 +440,32 @@ input[type=radio]:checked + label::after {
 }
 
 .optionResults {
-  margin-bottom: 25px;
+  margin-bottom: 15px;
+  position: relative;
+  -webkit-box-shadow: inset 10px 10px 25px 5px rgb(0 0 0 / 25%);
+  -moz-box-shadow: inset 10px 10px 25px 5px rgba(0,0,0,0.25);
+  box-shadow: inset 10px 10px 25px 5px rgb(0 0 0 / 25%);
+  padding: 2rem;
+  border-radius: 8px;
+  transform: scale(0.9);
+}
+
+.optionResults.optionSelected {
+  transform: scale(1);
+}
+
+.optionResults.optionSelected::after {
+  display: flex;
+  font-family: 'Material Icons';
+  content: '\e86c';
+  font-size: 40px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 50%;
+  color: #2ceac8;
+  position: absolute;
+  top: -10px;
+  right: -10px;
 }
 
 .progress {
@@ -477,4 +503,29 @@ input[type=radio]:checked + label::after {
 
 .progress-footer .percentage {
   font-size: 13px;
+}
+
+/* Error 404 */
+
+.error-404 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.error-404 h1 {
+  font-family: 'Dela Gothic One', cursive;
+  font-size: 10rem;
+  text-shadow: -7px 0px 0px #6846ec;
+}
+
+.error-404 h2 {
+  font-size: 14px;
+}
+
+.error-404 .btn {
+  display: flex;
+  max-width: 200px;
+  justify-content: center;
+  align-items: center;
 }

@@ -3,9 +3,10 @@ import { connect } from 'react-redux'
 
 class VoteResult extends Component {
     render() {
-        const { question } = this.props
+        const { authedUser, question } = this.props
         const { optionOne, optionTwo } = question
 
+        const votedOption = optionOne.votes.includes(authedUser) ? 'optionOne' : 'optionTwo'
         const o1TotalVotes = question.optionOne.votes.length
         const o2TotalVotes = question.optionTwo.votes.length
         const oTotal = o1TotalVotes + o2TotalVotes
@@ -23,9 +24,10 @@ class VoteResult extends Component {
         const optionTwopbar = {
             width: o2Percentage
         }
+
         return (
             <div>
-                <div className="optionResults">
+                <div className={votedOption === 'optionOne' ? 'optionResults optionSelected' : 'optionResults'}>
                     <h3>{optionOne.text}</h3>
                     <div className="progress" style={pBarStyle}>
                         <div className="progress-bar" role="progressbar" style={optionOnepbar}></div>
@@ -36,7 +38,7 @@ class VoteResult extends Component {
                     </div>
                 </div>
 
-                <div className="optionResults">
+                <div className={votedOption === 'optionTwo' ? 'optionResults optionSelected' : 'optionResults'}>
                     <h3>{optionTwo.text}</h3>
                     <div className="progress" style={pBarStyle}>
                         <div className="progress-bar" role="progressbar" style={optionTwopbar}></div>
@@ -52,7 +54,6 @@ class VoteResult extends Component {
 }
 
 function mapStateToProps({authedUser, users, questions}, {id}) {
-    
     const question = questions[id]
     const user = users[question.author]
     

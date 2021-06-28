@@ -11,6 +11,7 @@ import Home from './Home'
 import NewQuestion from './NewQuestion'
 import Leaderboard from './Leaderboard'
 import ViewQuestion from './ViewQuestion'
+import Error404 from './Error404'
 
 class App extends Component {
     componentDidMount() {
@@ -41,6 +42,7 @@ class App extends Component {
                                   <Route path='/add' component={NewQuestion} />
                                   <Route path='/leaderboard' component={Leaderboard} />
                                   <Route path='/question/:id' component={ViewQuestion} />
+                                  <Route path='/404' component={Error404} />
                                 </Switch>
                             </article>
                         </section>
