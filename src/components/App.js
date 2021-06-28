@@ -24,7 +24,7 @@ class App extends Component {
                 <Fragment>
                 <LoadingBar/>
                 <Route path='/' exact component={SplashScreen} />
-                <div className='container'>
+                <div className='container-fluid'>
                     {
                     this.props.authedUser === null 
                     ? (

@@ -1,11 +1,29 @@
 import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { NavLink, withRouter } from 'react-router-dom'
+import { handleSignOut } from '../actions/authedUser'
 import logo from '../images/logo.png'
 import HomeIcon from '@material-ui/icons/Home'
 import CreateIcon from '@material-ui/icons/Create'
 import ShowChartIcon from '@material-ui/icons/ShowChart'
+import ExitToAppIcon from '@material-ui/icons/ExitToApp'
 
-export default class Nav extends Component {
+class Nav extends Component {
+
+    handleSignOut = (e) => {
+        e.preventDefault()
+        
+        const { dispatch } = this.props
+
+        dispatch(handleSignOut())
+
+        this.setState(() => ({
+            authedUser: null
+        }))
+
+        this.props.history.push('/signin')
+    }
+
     render() {
         return (
             <nav>
@@ -15,13 +33,16 @@ export default class Nav extends Component {
                 <div className='menu'>
                     <ul className='list-unstyled'>
                         <li>
-                            <NavLink to='/home'><HomeIcon/> Home</NavLink>
+                            <NavLink to='/home'><HomeIcon/> <span>Home</span></NavLink>
                         </li>
                         <li>
-                            <NavLink to='/add'><CreateIcon/> New Question</NavLink>
+                            <NavLink to='/add'><CreateIcon/> <span>New Question</span></NavLink>
                         </li>
                         <li>
-                            <NavLink to='/leaderboard'><ShowChartIcon/> Leaderboard</NavLink>
+                            <NavLink to='/leaderboard'><ShowChartIcon/> <span>Leaderboard</span></NavLink>
+                        </li>
+                        <li>
+                            <NavLink to='/signin' onClick={this.handleSignOut}><ExitToAppIcon/> <span>Sign Out</span></NavLink>
                         </li>
                     </ul>
                 </div>
@@ -29,3 +50,11 @@ export default class Nav extends Component {
         )
     }
 }
+
+function mapStateToProps({authedUser}) {
+    return {
+        authedUser
+    }
+}
+
+export default withRouter(connect(mapStateToProps)(Nav))
