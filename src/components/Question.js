@@ -13,7 +13,7 @@ class Question extends Component {
         } = question
 
         return (
-            <Link to={`/question/${id}`} className='questionCard'>
+            <Link to={`/questions/${id}`} className='questionCard'>
                 <img src={this.props.users[author].avatarURL} alt='' className='img-fluid'/>
                 <div className='info'>
                     <div className='author'>{`@${author}`}</div>

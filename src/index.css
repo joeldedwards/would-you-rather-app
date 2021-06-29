@@ -13,7 +13,6 @@ body {
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 code {
@@ -102,10 +101,8 @@ code {
 
 main {
   display: flex;
-  min-height: 600px;
   width: 100%;
   border-radius: 30px;
-  background: #1e1f23;
   overflow: hidden;
   
 }
@@ -115,7 +112,6 @@ nav {
   padding: 2rem 0;
   display: flex;
   flex-direction: column;
-  box-shadow: rgb(0 0 0 / 6%) 0px 5px 5px -3px, rgb(0 0 0 / 4%) 0px 8px 10px 1px, rgb(0 0 0 / 4%) 0px 3px 14px 2px;
 }
 
 nav .logo {
@@ -201,11 +197,40 @@ main section header h1 {
 }
 
 main section article {
-  padding: 2rem;
+  padding: 1rem;
 }
 
 .inner-section {
   max-width: 500px;
+}
+
+#homeComponent.inner-section {
+  max-width: 90%;
+}
+
+#homeComponent .nav {
+  padding: 0.5rem;
+  box-shadow: inset 10px 10px 25px 5px rgb(0 0 0 / 25%);
+  border-radius: 10px;
+  justify-content: center;
+}
+
+.nav-pills .nav-link.active, 
+.nav-pills .show>.nav-link {
+  background-color: #6846ec;
+}
+
+.nav-link {
+  color: #555;
+}
+
+.nav-link:focus, 
+.nav-link:hover {
+  color: #6846ec;
+}
+
+.tab-content {
+  padding: 1rem;
 }
 
 .inner-section h1 {

@@ -20,17 +20,16 @@ class App extends Component {
 
     render() {
         return (
-            <Router>
-                <Fragment>
-                <LoadingBar/>
-                <Route path='/' exact component={SplashScreen} />
-                <div className='container-fluid'>
-                    {
+          <Router>
+              <Fragment>
+              <LoadingBar/>
+              <Route path='/' exact component={SplashScreen} />
+              <div className='container-fluid gx-0'>
+                  {
                     this.props.authedUser === null 
-                    ? (
-                      <Route path='/signin' component={SignIn} />
-                    )
-                    : 
+                    ? ( 
+                      <Route path='/signin' component={SignIn} /> 
+                    ) : 
                     <div>
                       <main>
                         <Nav/>
@@ -41,17 +40,17 @@ class App extends Component {
                                   <Route path='/home' component={Home} />
                                   <Route path='/add' component={NewQuestion} />
                                   <Route path='/leaderboard' component={Leaderboard} />
-                                  <Route path='/question/:id' component={ViewQuestion} />
+                                  <Route path='/questions/:id' component={ViewQuestion} />
                                   <Route path='/404' component={Error404} />
                                 </Switch>
                             </article>
                         </section>
                       </main>
                     </div>
-                    }
-                </div>
-                </Fragment>
-            </Router>
+                  }
+              </div>
+              </Fragment>
+          </Router>
         )
     }
 }

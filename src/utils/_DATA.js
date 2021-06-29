@@ -17,9 +17,9 @@ let users = {
     },
     questions: ['8xf0y6ziyjabvozdd253nd', 'am8ehyc8byjqgar0jgpub9']
   },
-  daschapolanco: {
-    id: 'daschapolanco',
-    name: 'Dascha Polanco',
+  mariacastle: {
+    id: 'mariacastle',
+    name: 'Maria Castle',
     avatarURL: girl4,
     answers: {},
     questions: ['smkpks8pditowsp3rcqp6i'],
@@ -135,7 +135,7 @@ let questions = {
   },
   "smkpks8pditowsp3rcqp6i": {
     id: 'smkpks8pditowsp3rcqp6i',
-    author: 'daschapolanco',
+    author: 'mariacastle',
     timestamp: 1623694255423,
     optionOne: {
       votes: [],
@@ -151,7 +151,7 @@ let questions = {
     author: 'joeledwards',
     timestamp: 1623802236361,
     optionOne: {
-      votes: ['joeledwards', 'daschapolanco', 'tylermcginnis'],
+      votes: ['joeledwards', 'mariacastle', 'tylermcginnis'],
       text: 'Become a hero',
     },
     optionTwo: {
@@ -169,7 +169,7 @@ let questions = {
     },
     optionTwo: {
       votes: [],
-      text: 'Marry Kerry Washington'
+      text: 'Marry Taraji P. Henson'
     }
   },
 }

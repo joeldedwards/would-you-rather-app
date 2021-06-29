@@ -20,7 +20,11 @@ class SignIn extends Component {
 
         const setUser = e.target.value
 
-        const setAvatar = this.state.usersArr.find(({id}) => id === setUser)
+        let setAvatar = this.state.usersArr.find(({id}) => id === setUser)
+
+        if (setAvatar === null || setAvatar === undefined) {
+            setAvatar = ''
+        }
 
         this.setState(() => ({
             setUser,
