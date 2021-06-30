@@ -1,6 +1,6 @@
-import React, { Component } from "react"
-import { connect } from "react-redux"
-import Question from "./Question"
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import Question from './Question'
 
 class Home extends Component {
     render() {
@@ -11,40 +11,40 @@ class Home extends Component {
             <div id='homeComponent' className='container inner-section'>
                 <h1>Would You Rather...</h1>
                 <h2>Answer / View Answered Questions</h2>
-                <ul className="nav nav-pills" id="qTab" role="tablist">
-                    <li className="nav-item" role="presentation">
+                <ul className='nav nav-pills' id='qTab' role='tablist'>
+                    <li className='nav-item' role='presentation'>
                         <button
-                        className="nav-link active"
-                        id="unAnsweredQs-tab"
-                        data-bs-toggle="tab"
-                        data-bs-target="#unAnsweredQs"
-                        type="button"
-                        role="tab"
-                        aria-controls="unAnsweredQs"
-                        aria-selected="true">
+                        className='nav-link active'
+                        id='unAnsweredQs-tab'
+                        data-bs-toggle='tab'
+                        data-bs-target='#unAnsweredQs'
+                        type='button'
+                        role='tab'
+                        aria-controls='unAnsweredQs'
+                        aria-selected='true'>
                         Unanswered Questions
                         </button>
                     </li>
-                    <li className="nav-item" role="presentation">
+                    <li className='nav-item' role='presentation'>
                         <button
-                        className="nav-link"
-                        id="answeredQs-tab"
-                        data-bs-toggle="tab"
-                        data-bs-target="#answeredQs"
-                        type="button"
-                        role="tab"
-                        aria-controls="answeredQs"
-                        aria-selected="false">
+                        className='nav-link'
+                        id='answeredQs-tab'
+                        data-bs-toggle='tab'
+                        data-bs-target='#answeredQs'
+                        type='button'
+                        role='tab'
+                        aria-controls='answeredQs'
+                        aria-selected='false'>
                         Answered Questions
                         </button>
                     </li>
                 </ul>
-                <div className="tab-content" id="qTabContent">
+                <div className='tab-content' id='qTabContent'>
                     <div
-                        className="tab-pane fade show active"
-                        id="unAnsweredQs"
-                        role="tabpanel"
-                        aria-labelledby="unAnsweredQs-tab">
+                        className='tab-pane fade show active'
+                        id='unAnsweredQs'
+                        role='tabpanel'
+                        aria-labelledby='unAnsweredQs-tab'>
                         <ul className='list-unstyled'>
                         {
                             unAnsweredQs.map((id) => (
@@ -56,10 +56,10 @@ class Home extends Component {
                         </ul>
                     </div>
                     <div
-                        className="tab-pane fade"
-                        id="answeredQs"
-                        role="tabpanel"
-                        aria-labelledby="answeredQs-tab">
+                        className='tab-pane fade'
+                        id='answeredQs'
+                        role='tabpanel'
+                        aria-labelledby='answeredQs-tab'>
                         <ul className='list-unstyled'>
                         {
                             answeredQs.map((id) => (

@@ -29,23 +29,23 @@ class VoteResult extends Component {
             <div>
                 <div className={votedOption === 'optionOne' ? 'optionResults optionSelected' : 'optionResults'}>
                     <h3>{optionOne.text}</h3>
-                    <div className="progress" style={pBarStyle}>
-                        <div className="progress-bar" role="progressbar" style={optionOnepbar}></div>
+                    <div className='progress' style={pBarStyle}>
+                        <div className='progress-bar' role='progressbar' style={optionOnepbar}></div>
                     </div>
-                    <div className="progress-footer">
-                        <div className="total-votes">{`${o1TotalVotes} out of ${oTotal} votes`}</div>
-                        <div className="percentage">{o1Percentage}</div>
+                    <div className='progress-footer'>
+                        <div className='total-votes'>{`${o1TotalVotes} out of ${oTotal} votes`}</div>
+                        <div className='percentage'>{o1Percentage}</div>
                     </div>
                 </div>
 
                 <div className={votedOption === 'optionTwo' ? 'optionResults optionSelected' : 'optionResults'}>
                     <h3>{optionTwo.text}</h3>
-                    <div className="progress" style={pBarStyle}>
-                        <div className="progress-bar" role="progressbar" style={optionTwopbar}></div>
+                    <div className='progress' style={pBarStyle}>
+                        <div className='progress-bar' role='progressbar' style={optionTwopbar}></div>
                     </div>
-                    <div className="progress-footer">
-                        <div className="total-votes">{`${o2TotalVotes} out of ${oTotal} votes`}</div>
-                        <div className="percentage">{o2Percentage}</div>
+                    <div className='progress-footer'>
+                        <div className='total-votes'>{`${o2TotalVotes} out of ${oTotal} votes`}</div>
+                        <div className='percentage'>{o2Percentage}</div>
                     </div>
                 </div>
             </div>

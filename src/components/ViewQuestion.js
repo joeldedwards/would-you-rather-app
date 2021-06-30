@@ -28,7 +28,7 @@ class ViewQuestion extends Component {
         
         return (
             <div className='container inner-section'>
-                <div className="hero">
+                <div className='hero'>
                     <img src={authorAvatar} alt='' className='img-fluid'/>
                     <h2>{authorName} {!voted ? 'asks' : 'asked'}</h2>
                 </div>

@@ -73,10 +73,10 @@ class SignIn extends Component {
                                 }
                             </select>
                             
-                            <div className="footer">
+                            <div className='footer'>
                                 <h5>Sign in</h5>
                                 <IconButton 
-                                variant="outlined" 
+                                variant='outlined' 
                                 color='primary'
                                 disabled={setUser === ''}
                                 type='submit'><ArrowForwardIosIcon /></IconButton>

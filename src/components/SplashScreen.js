@@ -13,10 +13,10 @@ export default function SplashScreen() {
 
     return (
         <div>
-            <div className="splash-screen SplashScreen">
-                <img src={logo} alt="" className='logo' />
+            <div className='splash-screen SplashScreen'>
+                <img src={logo} alt='' className='logo' />
                 <Button 
-                variant="contained" 
+                variant='contained' 
                 className='btn' 
                 size='large' 
                 color='primary' 

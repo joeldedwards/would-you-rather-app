@@ -2,7 +2,6 @@ import React, { Component, Fragment } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { handleInitialData } from '../actions/shared'
-import { LoadingBar } from 'react-redux-loading'
 import SplashScreen from './SplashScreen'
 import Nav from './Nav'
 import Header from './Header'
@@ -22,7 +21,6 @@ class App extends Component {
         return (
           <Router>
               <Fragment>
-              <LoadingBar/>
               <Route path='/' exact component={SplashScreen} />
               <div className='container-fluid gx-0'>
                   {
