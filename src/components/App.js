@@ -26,7 +26,7 @@ class App extends Component {
                   {
                     this.props.authedUser === null 
                     ? ( 
-                      <Route path='/signin' component={SignIn} /> 
+                      <Route path='*' component={SignIn} /> 
                     ) : 
                     <div>
                       <main>

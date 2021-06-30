@@ -35,8 +35,8 @@ class SignIn extends Component {
     handleSubmit = (e) => {
         e.preventDefault()
         
-        const {setUser} = this.state
-        const {dispatch} = this.props
+        const { setUser } = this.state
+        const { dispatch } = this.props
 
         dispatch(setAuthedUser(setUser))
 
@@ -45,8 +45,8 @@ class SignIn extends Component {
     }
 
     render() {
-        const {users} = this.props
-        const {setUser, setUserAvatar} = this.state
+        const { users } = this.props
+        const { setUser, setUserAvatar } = this.state
         
         return (
             <div>
@@ -73,10 +73,10 @@ class SignIn extends Component {
                                 }
                             </select>
                             
-                            <div className='footer'>
+                            <div className="footer">
                                 <h5>Sign in</h5>
                                 <IconButton 
-                                variant='outlined' 
+                                variant="outlined" 
                                 color='primary'
                                 disabled={setUser === ''}
                                 type='submit'><ArrowForwardIosIcon /></IconButton>
