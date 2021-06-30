@@ -289,13 +289,23 @@ main section article {
   justify-content: space-between;
   align-items: center;
   border-radius: 50px;
-  padding: 2px 30px 0 0;
+  padding: 10px 30px 10px 10px;
   width: 100%;
   order: 4;
 }
 
 .inner-section .scorecard img {
   width: 50px;
+}
+
+.inner-section .scorecard .stats {
+  display: flex;
+  flex-direction: column;
+}
+
+.inner-section .scorecard .stats .user-asks {
+  font-size: 11px;
+  color: #999;
 }
 
 .inner-section .scorecard:nth-child(1) {
@@ -324,6 +334,10 @@ main section article {
   margin-bottom: 10px;
 }
 
+.inner-section .scorecard:nth-child(1) .stats {
+  align-items: center;
+}
+
 /* 2nd Place */
 .inner-section .scorecard:nth-child(2) {
   background-color: transparent;
@@ -341,6 +355,10 @@ main section article {
   margin-bottom: 15px;
 }
 
+.inner-section .scorecard:nth-child(2) .stats {
+  align-items: center;
+}
+
 /* 3rd Place */
 .inner-section .scorecard:nth-child(3) {
   background-color: transparent;
@@ -356,6 +374,10 @@ main section article {
   border: 3px solid #2ceac8;
   border-radius: 50%;
   margin-bottom: 15px;
+}
+
+.inner-section .scorecard:nth-child(3) .stats {
+  align-items: center;
 }
 
 .questionCard {

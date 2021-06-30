@@ -16,7 +16,10 @@ class Leaderboard extends Component {
                         scoreStats.map((user) => (
                             <li key={user.id} className='scorecard'>
                                 <img src={user.avatarURL} alt={user.id} className='img-fluid' />
-                                <span>{user.name}</span>
+                                <div className='stats'>
+                                    <span className='user-name'>{user.name}</span>
+                                    <span className='user-asks'>Questions Asked: {user.userQuestions}</span>
+                                </div>
                                 <span>{user.score}</span>
                             </li>
                         ))
@@ -33,6 +36,7 @@ function mapStateToProps({users}) {
         id: user.id,
         name: user.name,
         avatarURL: user.avatarURL,
+        userQuestions: user.questions.length,
         score: Object.values(user.answers).length + user.questions.length
     }))
     .sort((a, b) => a.score - b.score)

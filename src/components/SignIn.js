@@ -12,7 +12,8 @@ class SignIn extends Component {
     state = {
         setUser: '',
         usersArr: this.props.users,
-        setUserAvatar: ''
+        setUserAvatar: '',
+        currentLocation: ''
     }
 
     changeAuthedUser = (e) => {
@@ -36,11 +37,14 @@ class SignIn extends Component {
         e.preventDefault()
         
         const { setUser } = this.state
-        const { dispatch } = this.props
+        const { dispatch, currentLocation } = this.props
 
         dispatch(setAuthedUser(setUser))
 
-        this.props.history.push('/home')
+        if (currentLocation === '/signin')
+            this.props.history.push('/home')
+        else
+            this.props.history.push(currentLocation)
         
     }
 
@@ -89,9 +93,13 @@ class SignIn extends Component {
     }
 }
 
-function mapStateToProps({users, authedUser}) {
+function mapStateToProps({users, authedUser}, props) {
+
+    const currentLocation = props.location.pathname
+
     return {
         users: Object.keys(users).map((user) => users[user]),
+        currentLocation,
         authedUser
     }
 }

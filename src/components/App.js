@@ -18,15 +18,18 @@ class App extends Component {
     }
 
     render() {
+
+        const { authedUser } = this.props
+        
         return (
           <Router>
               <Fragment>
               <Route path='/' exact component={SplashScreen} />
               <div className='container-fluid gx-0'>
                   {
-                    this.props.authedUser === null 
+                    authedUser === null 
                     ? ( 
-                      <Route path='*' component={SignIn} /> 
+                      <Route path='*' component={SignIn} />
                     ) : 
                     <div>
                       <main>

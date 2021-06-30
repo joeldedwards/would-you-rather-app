@@ -1,20 +1,18 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 
-class Header extends Component {
+function Header(props) {
 
-    render() {
-        const { authedName, authedAvatar } = this.props
+    const { authedName, authedAvatar } = props
 
-        return (
-            <div>
-                <header>
-                    <img src={authedAvatar} alt='' className='img-fluid avatar-icon'/>
-                    <h1>{`Hello, ${authedName}`}</h1>
-                </header>
-            </div>
-        )
-    }
+    return (
+        <div>
+            <header>
+                <img src={authedAvatar} alt='' className='img-fluid avatar-icon'/>
+                <h1>{`Hello, ${authedName}`}</h1>
+            </header>
+        </div>
+    )
 }
 
 function mapStateToProps({users, authedUser}) {
